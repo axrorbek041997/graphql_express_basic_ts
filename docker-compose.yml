@@ -1,0 +1,15 @@
+services:
+  postgres:
+    container_name: graphql_pg
+    image: postgres:latest
+    ports:
+      - "${DB_PORT}:5432"
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+
+  redis:
+    container_name: graphql_redis
+    image: redis:latest
+    ports:
+      - "${REDIS_PORT}:6379"
